@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemple CSS Grid</title>
+</head>
+<body>
+
+    <div class="container-grille">
+
+        <header>{{title}}</header>
+        <nav>
+            <ul class="liste-sidenav">
+                <li><a routerLink = "listeOffre">liste des Offres</a></li>
+                <li><a routerLink="offre">Insertion Offre</a></li>
+                <li><a routerLink="listeValidation">validation</a></li>
+                <li><a routerLink="statistique">Statistique</a></li>
+            </ul>
+        </nav>
+
+
+        <main>
+            <router-outlet></router-outlet>
+        </main>
+        <footer>Footer</footer>
+    </div>
+
+</body>
+</html>

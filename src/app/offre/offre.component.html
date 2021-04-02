@@ -1,0 +1,75 @@
+
+        <div class="l-form">
+            <form action="" class="form">
+                <div class="form__div">
+                    <input type="text" class="form__input" name="nomOffre" id="nomOffre" required="required" [(ngModel)]="nomOffre">
+                    <label for="" class="form__label">nom de l'offre</label>
+                </div>
+                
+                <div class="form__div">
+                    <input type="text" class="form__input" name="prixOffre" id="prixOffre"  required="required" [(ngModel)]="prixOffre">
+                    <label for="" class="form__label">prix de l'offre</label>
+                </div>
+                <div class="form__div">
+                    <input type="text" class="form__input" name="validiteOffre" id="validiteOffre"  required="required" [(ngModel)]="validiteOffre">
+                    <label for="" class="form__label">validite de l'offre</label>
+                </div>
+                <select name="uniteValidite"   #t (change)="OnChangeUniteValidite(t.value)">
+                    <option *ngFor="let data of listeUnite " [value]="data.idUniteValidire"> {{data.nomUnite}}</option>
+                </select>
+                <p *ngIf="message"> {{message}}</p>
+
+            
+
+            </form>
+            
+        </div>
+ 
+        <div class="content">
+                <div class="form__div input1">
+                    <select name="uniteValidite"   #z (change)="OnChangeType(z.value)">
+                        <option *ngFor="let data of listeType " [value]="data.idTypeOffre"> {{data.nomType}}</option>
+                    </select>
+                </div>
+                <div class="form__div input2">
+                    <input type="text" class="form__input" [(ngModel)]="quantiter">
+                    <label for="" class="form__label">quantiter</label>
+                </div>
+                <div class="form__div input3">
+                    <input type="time" class="form__input" [(ngModel)]="heureDebut">
+                    <label for="" class="form__label">heure debut</label>
+                </div>
+                <div class="form__div input4">
+                    <input type="time" class="form__input" [(ngModel)] = "heureFin">
+                    <label for="" class="form__label">heure fin</label>
+                </div>
+                <div class="input5">
+                    <input (click)="addTypeOffre()" type="submit" class="form__button_blue" value="ok">
+                </div>
+        </div>
+
+        <div class="listeOffre">
+            <table class = "content-table">
+                <thead>
+                    <tr>
+                        <th>type de l'offre</th>
+                        <th>quantiter</th>
+                        <th>heure debut de l'offre</th>
+                        <th>heure fin de l'offre</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let data of listeTypeOffre">
+                        <td> {{data.typeOffre}} </td>
+                        <td> {{data.quantiter}} </td>
+                        <td> {{data.dateDebut}}</td>
+                        <td> {{data.dateFin}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div>
+                    <input *ngIf="!update" (click)="insertOffre()" type="submit" class="form__button" value="valider tout">
+                    <input *ngIf="update" (click)="UpdateOffre()" type="submit" class="form__button" value="update">
+        </div>

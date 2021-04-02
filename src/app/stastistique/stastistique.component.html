@@ -1,0 +1,47 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="grid">
+	<div id="chart1" *ngIf="chartOptionsSolde">
+	  <apx-chart
+		[series]="chartOptionsSolde.series"
+		[chart]="chartOptionsSolde.chart"
+		[xaxis]="chartOptionsSolde.xaxis"
+		[dataLabels]="chartOptionsSolde.dataLabels"
+		[grid]="chartOptionsSolde.grid"
+		[stroke]="chartOptionsSolde.stroke"
+		[title]="chartOptionsSolde.title"
+	  ></apx-chart>
+	</div>
+
+	<div id="chart2" *ngIf="chartOptionsMouvement">
+	  <apx-chart
+		[series]="chartOptionsMouvement.series"
+		[chart]="chartOptionsMouvement.chart"
+		[xaxis]="chartOptionsMouvement.xaxis"
+		[dataLabels]="chartOptionsMouvement.dataLabels"
+		[grid]="chartOptionsMouvement.grid"
+		[stroke]="chartOptionsMouvement.stroke"
+		[title]="chartOptionsMouvement.title"
+	  ></apx-chart>
+	</div>
+
+	<div id="TableauStatistiqueOffre" *ngIf="tabStatOffre"> 
+			<table class="content-table">
+				<thead>
+					<tr>
+						<th> Offre </th>
+						<th> nombre de souscription </th>
+						<th> rang</th>
+						<th> # </th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr *ngFor="let data of tabStatOffre ; index as i">
+						<td>{{data.nomOffre}}</td>
+						<td>{{data.nombreDeSouscription}}</td>
+						<td>{{data.rang}}</td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+	</div>
+</div>

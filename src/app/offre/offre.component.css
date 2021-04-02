@@ -1,0 +1,154 @@
+/*===== GOOGLE FONTS =====*/
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
+/*===== VARIABLES CSS =====*/
+:root{
+  /*===== Colores =====*/
+  --first-color: #009879;
+  --input-color: #80868B;
+  --border-color: #DADCE0;
+
+  /*===== Fuente y tipografia =====*/
+  --body-font: 'Roboto', sans-serif;
+  --normal-font-size: 1rem;
+  --small-font-size: .75rem;
+}
+  
+/*===== BASE =====*/
+*,::before,::after{
+  box-sizing: border-box;
+}
+body{
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+}
+h1{
+  margin: 0;
+}
+
+/*===== FORM =====*/
+.l-form {
+  align-items: center;
+  margin-left: 25%;
+}
+.form{
+  width: 360px;
+
+}
+.form__title{
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.form__div{
+  position: relative;
+  height: 35px;
+  margin-bottom: 1.5rem;
+}
+.form__input{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 0.8rem;
+  border: 1px solid #DADCE0;
+  border-radius: .5rem;
+  outline: none;
+  padding: 1rem;
+  background: none;
+  z-index: 1;
+}
+.form__label{
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  padding: 0 .25rem;
+  background-color: #fff;
+  color: #80868B;
+  font-size: 1rem;
+  transition: .3s;
+}
+.form__button{
+  display: block;
+  margin-left: auto;
+  padding: .75rem 2rem;
+  outline: none;
+  border: none;
+  background-color: #009879;
+  color: #fff;
+  font-size: .7rem;
+  border-radius: .5rem;
+  cursor: pointer;
+  transition: .3s;
+}
+.form__button:hover{
+  box-shadow: 0 10px 36px rgba(0,0,0,.15);
+}
+
+.form__button_blue{
+  display: block;
+  margin-left: auto;
+  padding: .75rem 2rem;
+  outline: none;
+  border: none;
+  background-color: lightgreen;
+  color: #fff;
+  font-size: 0.7rem;
+  border-radius: .5rem;
+  cursor: pointer;
+  transition: .3s;
+}
+.form__button_blue:hover{
+  box-shadow: 0 10px 36px rgba(0,0,0,.15);
+}
+
+/*Input focus move up label*/
+.form__input:focus + .form__label{
+  top: -.5rem;
+  left: .8rem;
+  color: #009879;
+  font-size: .75rem;
+  font-weight: 200;
+  z-index: 10;
+}
+
+/*Input focus sticky top label*/
+.form__input:not(:placeholder-shown).form__input:not(:focus)+ .form__label{
+  top: -.5rem;
+  left: .8rem;
+  font-size: .8rem;
+  font-weight: 500;
+  z-index: 10;
+}
+
+/*Input focus*/
+.form__input:focus{
+  border: 1.5px solid #009879;
+}
+
+.content {
+    margin: 2% 2% 2% 2%;
+    height: 100vh;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    max-height: 40px;
+}
+
+
+.input5 , .input1 , .input2 , .input3 , .input4 {
+  grid-column: span 1;
+  max-width: 150px;
+  max-height: 40px;
+}
+
+.listeOffre{
+  display: flex;
+  align-content: center;
+  align-items: center;
+  margin-left: 10%;
+}
+
+

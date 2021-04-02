@@ -1,0 +1,28 @@
+
+<div class="form__div">
+    <input type="text" [(ngModel)]= "idClient">
+    <button (click)="getAllValidationById()"> Rechercher </button>
+</div>
+        
+
+<div ng-if="listeValidation" class="listeValidation"> 
+    <table class="content-table">
+        <thead>
+            <tr>
+                <th> Client </th>
+                <th> montant </th>
+                <th> date de depot </th>
+                <th> # </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let data of listeValidation ; index as i">
+                <td>{{data.nomClient}}</td>
+                <td>{{data.montant}}</td>
+                <td>{{data.datempuvement}}</td>
+                <td> <button (click)="validerDepot(data.idmouvement)"> Valider </button>   ||  <button (click)="refuserDepot(data.idmouvement)"> refuser </button> </td>
+            </tr>
+        </tbody>
+    </table>
+   
+</div>

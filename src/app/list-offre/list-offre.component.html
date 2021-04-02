@@ -1,0 +1,22 @@
+<div class="listeOffre">
+    <table class = "content-table">
+        <thead>
+            <tr>
+                <th>nom de l'offre</th>
+                <th>prix de l'offre</th>
+                <th>delais de l'offre</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let data of listeOffre ; let i = index">
+                <td>{{data.nomOffre}}</td>
+                <td>{{data.prix}}</td>
+                <td>{{data.validite}} {{data.uniteValidite}}</td>
+                <td> <button class = "btn" (click)="UpdateOffre(data.idOffre)"> Update </button></td>
+                <td> <button class = "btn" (click)="DeleteOffre(data.idOffre)"> Delete </button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
